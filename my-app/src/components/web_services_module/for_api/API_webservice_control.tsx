@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const url_local = '127.0.0.1:8000';
+const url_docker = 'localhost:4110';
+
 export interface CityInterface{
     id:number,
     region:string,
@@ -13,7 +16,7 @@ export interface CityInterface{
 
 export const GetCities = async (id: number) => {
   const { data } = await axios.get<CityInterface[]>(
-    `http://127.0.0.1:8000/api/webservices-data/v1.0/get-cities-by-region/${id}`
+    `http://${url_docker}/api/webservices-data/v1.0/get-cities-by-region/${id}`
   );
 
   return data;
@@ -28,7 +31,7 @@ export interface DistrctsInterface{
 
 export const GetDistricts = async (id: number) => {
   const { data } = await axios.get<DistrctsInterface[]>(
-    `http://127.0.0.1:8000/api/webservices-data/v1.0/get-districts-by-region/${id}`
+    `http://${url_docker}/api/webservices-data/v1.0/get-districts-by-region/${id}`
   );
 
   return data;
@@ -43,7 +46,7 @@ export interface RegionInterface{
 
 export const GetRegions = async () => {
   const { data } = await axios.get<RegionInterface[]>(
-    `http://127.0.0.1:8000/api/webservices-data/v1.0/get-regions-without-childs`
+    `http://${url_docker}/api/webservices-data/v1.0/get-regions-without-childs`
   );
 
   return data;
@@ -56,7 +59,7 @@ export interface LastAppealDateInterface{
 
 export const GetLastAppealDate = async () => {
   const { data } = await axios.get<LastAppealDateInterface>(
-    `http://127.0.0.1:8000/api/webservices-data/v1.0/get-last-appeal-date`
+    `http://${url_docker}/api/webservices-data/v1.0/get-last-appeal-date`
   );
 
   return data;

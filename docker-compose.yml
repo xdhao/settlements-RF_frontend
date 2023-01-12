@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  react-sample-app:
+    container_name: react-sample-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - 4111:80
+    networks:
+      - global
+
+networks:
+  global:
+    external: true
