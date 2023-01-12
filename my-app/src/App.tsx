@@ -8,6 +8,9 @@ import CountryExcel from "./components/excel_module/Tables/Countrys/CountryTable
 import { DownloadSampleCsvFile } from "./components/download_file_button/downloadSampleCsvFile";
 import FederalExcel from "./components/excel_module/Tables/Federals/FederalTable";
 import AutosExcel from "./components/excel_module/Tables/Autos/AutosTable";
+import UrbanRural from "./components/excel_module/Tables/Analitics/One/UrbanRural";
+import TypesExcel from "./components/excel_module/Tables/Analitics/Three/TypesExcel";
+import ManWoman from "./components/excel_module/Tables/Analitics/Two/ManWoman";
 
 function App() {
   const onChange = (key: string) => {
@@ -43,6 +46,13 @@ function App() {
           key="1"
         >
           <DownloadSampleCsvFile />
+          <h2>Анализ данных</h2>
+          <h3>Соотношение городского и сельского населения</h3>
+          <UrbanRural></UrbanRural>
+          <h3>Среднее количество населенных пунктов по типам</h3>
+          <TypesExcel></TypesExcel>
+          <h3>Средний % мужчин/женщин среди городского/сельского населения</h3>
+          <ManWoman></ManWoman>
           <h2>Страна</h2>
           <CountryExcel></CountryExcel>
           <h2>Федеральные округа</h2>

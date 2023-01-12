@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import "../table.css";
 import TrTable from "./TableElements";
 import { CitSummaryInterface, CitInterface, GetCitis } from "../../for_api/API_excel_control";
+import SummaryCits from "./Counts";
 
 
   interface TableInteface {
-    summary: CitSummaryInterface | undefined
+    summary: CitSummaryInterface
     cits: CitInterface[];
     getUserInfo:()=>void
   }
   
-  const Table: React.FC<TableInteface> = ({ cits,getUserInfo }) => {
+  const Table: React.FC<TableInteface> = ({ cits,getUserInfo, summary }) => {
 
 
 
@@ -20,6 +21,7 @@ import { CitSummaryInterface, CitInterface, GetCitis } from "../../for_api/API_e
   }, []);
 
   return (
+    
     <div
       style={{
         display: "flex",
